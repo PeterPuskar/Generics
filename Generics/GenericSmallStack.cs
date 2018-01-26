@@ -6,34 +6,31 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    class SmallStack
+    class GenericSmallStack<T>
     {
-        private int[] pole = new int[10];
+        private T[] pole = new T[10];
         private int index = 0;
-        public void Push( int cislo)
+        public void Push(T objekt)
         {
             //index uz je na konci pola a preto nesmie pridat vyhdzuje vynimku
-            if (index==pole.Length-1)
+            if (index == pole.Length - 1)
             {
                 throw new IndexOutOfRangeException("prekrocena velkost");
             }
-            pole[index] = cislo;
+            pole[index] = objekt;
             index++;
-            
+
 
         }
 
-        public int Pop()
+        public T Pop()
         {
-            if(index-1<0)
+            if (index - 1 < 0)
             {
                 throw new IndexOutOfRangeException("nie je co odobrat");
             }
 
-            int res = pole[index];
-            index--;
-            return res;
-                // mozno aj return pole[index--]
+            return pole[index--];
 
 
         }

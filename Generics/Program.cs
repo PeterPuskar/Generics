@@ -17,16 +17,29 @@ namespace Generics
             telefonniSeznam.AddStudent(new Student { TelCislo = "+459870021", Jmeno = "Petr", rc = "025687/7" });
 
             Student student = new Student();
-            if(telefonniSeznam.Find("78dd9654", out student))
+            if (telefonniSeznam.Find("78dd9654", out student))
             {
                 Console.WriteLine(student.Jmeno);
                 Console.WriteLine(student.TelCislo);
-                
+
             }
 
-            else Console.WriteLine("zaznam nie je");
+            else
+            {
+                Console.WriteLine("zaznam nie je");
+            }
+
+            GenericSmallStack<string> test = new GenericSmallStack<string>();
+
+               test.Pop();
+
+            //test.Push("prvy");
+            //test.Push("druhy");
+            //test.Push("treti");
+
 
             
+
             Console.ReadKey();
         }
     }

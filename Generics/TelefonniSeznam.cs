@@ -16,7 +16,7 @@ namespace Generics
             {
                 seznam.Add(student.TelCislo, student);
             }
-
+            // odchytebie vyjimky v pripade ak sa nepodari pridat kluc, napriklad duplicita a podobne
             catch (System.ArgumentException exception)
             {
                 Console.WriteLine("rovnake zadanie {0}", exception.ToString());
